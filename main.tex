@@ -11,7 +11,7 @@ Particuraly grave was the subject indexing situation at the science libraries, w
 How do you create a new, controlled vocabulary that can be still be used to search all the literature you already have?
 We decided to base the new vocabulary on the keywords we already had. Using the catalog data we had record ids coupled to keywords and department library holdings. 
 
-A main idea was to exploit this connection. The process was as follows: Each of our department libraries was provided with a list of all keywords that appeared on their catalog records. Due to the nature of the BIBSYS catalog, which is a common catalog used by the vast majority of academic and research libraries in Norway, there was no way of knowing whether the keywords had originally been assigned by us, or by any other library sharing the record in question. The lists varied in length, from a couple of thousand to XXX. They were arranged alphabetically. The task was now to assign a code to each word, stating whether the word should be part of the controlled vocabulary or ignored. Other possibilities were to mark the words as "start of phrase", "latin", "genre", "time", "place", "acronym", or "synonym" to another word in the list. During this coding, the keywords were not seen in context to records, the task being only to consider whether or not each keyword should belong to our controlled vocabulary. 
+A main idea was to exploit this connection. The process was as follows: Each of our department libraries was provided with a list of all keywords that appeared on their catalog records. Due to the nature of the BIBSYS catalog, which is a common catalog used by the vast majority of academic and research libraries in Norway, there was no way of knowing whether the keywords had originally been assigned by us, or by any other library sharing the record in question. The lists varied in length, from a couple of thousand to XXX single words. They were arranged alphabetically. The task was now to assign a code to each word, stating whether the word should be part of the controlled vocabulary or ignored. Other possibilities were to mark the words as "start of phrase", "latin", "genre", "time", "place", "acronym", or "synonym" to another word in the list. During this coding, the keywords were not seen in context to records, the task being only to consider whether or not each keyword should belong to our controlled vocabulary. 
 
 The coding "start of phrase" was used for all adjectives. In the next step, we harvested the word immediately following this, from each of the records where this start of phrase was used. This resulted in new lists to be checked, and the securing of many useful phrases. 
 
@@ -31,6 +31,17 @@ Lucky for us BIBSYS' first attempt to migrate into a new library system, ended i
 
 This was no small task. The inhouse software had to be reprogrammed to fit the new pattern. Simultaneously we decided to move the vocabulary editing function out of Roald, and isolate it. 
 
+\section{Laget et emnesøk (practical applications)}
+At the point when we had a working vocabulary, we made a working vocabulary search. Our OPAC did not provide browsing functionality, but we were now able to add this functionality ourselves. An interface was programmed that let the user browse in our vocabulary, using also non-preferred terms as search entrances. Her synes jeg vi skal fortelle litt om søket og hvordan det virker, med illustrasjon. Noe om utfordringer med å lage slik funksjonalitet som søker mot en nettside, jf Oria. 
+
+\section{Mistakes and challenges}
+In the actual making of the vocabulary we rushed a bit to quickly into the fun part. That meant the formal language choices were not sufficiently thought through. As a consequence, we prepared the list for our collegues without taking into consideration the difference between the word categories process and result of process. Our collegues were only told that all nouns should be in the plural form. As a result, word pairs as Analyse (Analysing as process) - Analyser (results of analysing process) were merged into single terms in the plural form. We still struggle with that. 
+
+Another issue is that whereas our phrase reconstruction worked well and we recovered many good phrases, the second word of the phrase, in the case where it was accepted, was also retrospectively registered to the originating record. Sometimes these words are in themselves quite meaningless, especially when the context around them is changed. For instance the word Analysis could be carrying some meaning in the Chemistry library, but in the merged Science library, it is more or less garbage. 
+
+Retrospective bulk subject indexing can of course not be without unwanted consequences.  
+
+
 \section{Resten}
 
 Laget eget vokabular
@@ -39,7 +50,7 @@ Retrospektiv påføring av kontrollerte emneord
 
 Laget strenger/innførte prekoordinering
 
-Laget et emnesøk (practical applications)
+
 
 Revisjon av emneordsstrukturen (fra 687 til flere felter)
 
